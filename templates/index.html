@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Create new poll</title>
+    <!-- Sematic UI CSS minified -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.11/semantic.min.css">
+    <!-- Sematic UI Javascript minified -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.11/semantic.min.js"></script>
+    <!-- JQuery Javascript minified -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="ui mini steps">
+        <div class="active step">
+            <i class="add circle icon"></i>
+            <div class="content">
+                <div class="title">Create</div>
+                <div class="description">Enter your polling data</div>
+            </div>
+        </div>
+        <div class="step">
+            <i class="checkmark icon"></i>
+            <div class="content">
+                <div class="title">Confirm</div>
+                <div class="description">Confirm your choices</div>
+            </div>
+        </div>
+        <div class="disabled step">
+            <i class="share alternate icon"></i>
+            <div class="content">
+                <div class="title">Share</div>
+                <div class="description">Share your poll</div>
+            </div>
+        </div>
+    </div>
+    <h1>Enter the title of the poll:</h1>
+    <form action="/save" method="post" accept-charset="utf-8">
+        <input type="text" name="Title" value="" placeholder="Enter title">
+    </form>
+</body>
+
+</html>

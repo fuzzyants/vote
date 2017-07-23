@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Vote</title>
-    <link rel="stylesheet" href="">
+    <title>Create new poll</title>
+    <!-- Sematic UI CSS minified -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.11/semantic.min.css">
+    <!-- Sematic UI Javascript minified -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.11/semantic.min.js"></script>
+    <!-- JQuery Javascript minified -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 </head>
+
 <body>
-  <h1>{{ .Title }}</h1>
-  <ol>
-    {{range .Options}}
+    <h1>{{ .Title }}</h1>
+    <ol>
+        {{range .Options}}
         <li>{{.Name}}</li>
-    {{end}}
-  </ol>
-
-
+        {{end}}
+    </ol>
 </body>
+
 </html>
