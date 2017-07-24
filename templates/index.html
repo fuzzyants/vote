@@ -14,33 +14,78 @@
 </head>
 
 <body>
-    <div class="ui mini steps">
-        <div class="active step">
-            <i class="add circle icon"></i>
-            <div class="content">
-                <div class="title">Create</div>
-                <div class="description">Enter your polling data</div>
-            </div>
-        </div>
-        <div class="step">
-            <i class="checkmark icon"></i>
-            <div class="content">
-                <div class="title">Confirm</div>
-                <div class="description">Confirm your choices</div>
-            </div>
-        </div>
-        <div class="disabled step">
-            <i class="share alternate icon"></i>
-            <div class="content">
-                <div class="title">Share</div>
-                <div class="description">Share your poll</div>
+    <div class="ui container">
+        <h1 class="ui centered header">Vote</h1>
+        <div class="ui container center aligned">
+            <div class="ui segment">
+                <div class="ui mini steps">
+                    <div class="active step">
+                        <i class="add circle icon"></i>
+                        <div class="content">
+                            <div class="title">Create</div>
+                            <div class="description">Enter your polling data</div>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <i class="checkmark icon"></i>
+                        <div class="content">
+                            <div class="title">Confirm</div>
+                            <div class="description">Confirm your choices</div>
+                        </div>
+                    </div>
+                    <div class="disabled step">
+                        <i class="share alternate icon"></i>
+                        <div class="content">
+                            <div class="title">Share</div>
+                            <div class="description">Share your poll</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui two column centered grid">
+                    <div class="column">
+                        <form class="ui form">
+                            <div class="inline fields">
+                                <div class="twelve wide field">
+                                    <a class="ui blue circular label">1</a>
+                                    <input type="text" name="option-one" placeholder="Option 1">
+                                </div>
+                            </div>
+                            <div class="inline fields">
+                                <div class="twelve wide field">
+                                    <a class="ui blue circular label">2</a>
+                                    <input type="text" name="option-two" placeholder="Option 2">
+                                </div>
+                            </div>
+                            <div class="inline fields">
+                                <div class="twelve wide field">
+                                    <a class="ui blue circular label">3</a>
+                                    <input type="text" name="option-three" placeholder="Option 3">
+                                </div>
+                            </div>
+                            <div class="inline fields">
+                                <div class="twelve wide field">
+                                    <a class="ui blue circular label">4</a>
+                                    <input type="text" name="option-four" placeholder="Option 4">
+                                </div>
+                            </div>
+                            <div class="inline fields">
+                                <div class="twelve wide field">
+                                    <a class="ui blue circular label">5</a>
+                                    <input type="text" name="option-five" placeholder="Option 5">
+                                </div>
+                            </div>
+                            <button class="ui primary button">
+                                Save
+                            </button>
+                            <button class="ui button">
+                                Discard
+                            </button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <h1>Enter the title of the poll:</h1>
-    <form action="/save" method="post" accept-charset="utf-8">
-        <input type="text" name="Title" value="" placeholder="Enter title">
-    </form>
 </body>
 
 </html>
