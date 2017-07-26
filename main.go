@@ -52,17 +52,14 @@ func main() {
 }
 
 func index(w http.ResponseWriter, r *http.Request) {
-	file := "templates/index.html"
-	template, err := template.ParseFiles(file)
+	files := []string{
+		"templates/layout.html",
+		"templates/create_form.html",
+		"templates/steps.html"}
+	templates := template.Must(template.ParseFiles(files...))
 
-	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
-	}
-
-	if err := template.Execute(w, nil); err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-	}
+	// for now render without data
+	templates.ExecuteTemplate(w, "layout", nil)
 
 }
 

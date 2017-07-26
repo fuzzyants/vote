@@ -1,0 +1,10 @@
+{{ define "ballot" }}
+
+<h1>{{ .Title }}</h1>
+<ol>
+    {{range .Options}}
+    <li>{{.Name}}</li>
+    {{end}}
+</ol>
+
+{{ end }}

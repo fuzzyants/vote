@@ -1,0 +1,48 @@
+{{ define "create_form" }}
+
+<div class="twelve wide column">
+    <form class="ui form">
+        <div class="ui huge sixteen wide inline input field">
+            <input type="text" name="question" placeholder="Which do you prefer?">
+            <div class="ui left pointing huge label">
+              the title of your poll
+            </div>
+        </div>
+        <div class="inline fields">
+            <div class="twelve wide field">
+                <a class="ui blue circular label">1</a>
+                <input type="text" name="option-one" placeholder="Option 1">
+            </div>
+        </div>
+        <div class="inline fields">
+            <div class="twelve wide field">
+                <a class="ui blue circular label">2</a>
+                <input type="text" name="option-two" placeholder="Option 2">
+            </div>
+        </div>
+        <div class="inline fields">
+            <div class="twelve wide field">
+                <a class="ui blue circular label">3</a>
+                <input type="text" name="option-three" placeholder="Option 3">
+            </div>
+        </div>
+        <div class="inline fields">
+            <div class="twelve wide field">
+                <a class="ui blue circular label">4</a>
+                <input type="text" name="option-four" placeholder="Option 4">
+            </div>
+        </div>
+        <div class="inline fields">
+            <div class="twelve wide field">
+                <a class="ui blue circular label">5</a>
+                <input type="text" name="option-five" placeholder="Option 5">
+            </div>
+        </div>
+        <button class="ui right floated right labeled primary icon button">
+            <i class="right arrow icon"></i>
+            Confirm
+        </button>
+    </form>
+</div>
+
+{{ end }}

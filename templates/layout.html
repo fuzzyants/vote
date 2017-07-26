@@ -1,0 +1,39 @@
+{{ define "layout" }}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Create new poll</title>
+    <!-- Sematic UI CSS minified -->
+    <link rel="stylesheet" href="/static/css/semantic.min.css">
+    <!-- Sematic UI Javascript minified -->
+    <script src="/static/js/semantic.min.js"></script>
+    <!-- JQuery Javascript minified -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="ui container">
+        <h1 class="ui center aligned icon header">
+            <i class="circular bar chart icon"></i>
+            Vote
+        </h1>
+        <div class="ui container center aligned">
+            {{ template "steps" }}
+            <div class="ui bottom attached segment">
+				<div class="ui three column centered grid">
+                    
+                {{ template "create_form" }}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+{{ end }}
