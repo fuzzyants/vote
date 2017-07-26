@@ -15,10 +15,12 @@
 
 <body>
     <div class="ui container">
-        <h1 class="ui centered header">Vote</h1>
+        <h1 class="ui center aligned icon header">
+            <i class="circular bar chart icon"></i>
+            Vote
+        </h1>
         <div class="ui container center aligned">
-            <div class="ui segment">
-                <div class="ui mini steps">
+            <div class="ui top attached mini steps">
                     <div class="active step">
                         <i class="add circle icon"></i>
                         <div class="content">
@@ -41,9 +43,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="ui two column centered grid">
-                    <div class="column">
+            <div class="ui bottom attached segment">
+                
+                <div class="ui three column centered grid">
+                    
+                    <div class="twelve wide column">
                         <form class="ui form">
+                            <div class="ui huge sixteen wide inline input field">
+                                <input type="text" name="question" placeholder="Which do you prefer?">
+                                <div class="ui left pointing huge label">
+                                  the title of your poll
+                                </div>
+                            </div>
                             <div class="inline fields">
                                 <div class="twelve wide field">
                                     <a class="ui blue circular label">1</a>
@@ -74,11 +85,9 @@
                                     <input type="text" name="option-five" placeholder="Option 5">
                                 </div>
                             </div>
-                            <button class="ui primary button">
-                                Save
-                            </button>
-                            <button class="ui button">
-                                Discard
+                            <button class="ui right floated right labeled primary icon button">
+                                <i class="right arrow icon"></i>
+                                Confirm
                             </button>
                         </form>
                     </div>
