@@ -32,10 +32,38 @@ func main() {
 	// Can never be removed
 	fmt.Println("Flo ist super!")
 
-	http.HandleFunc("/save", SavePoll)
-	http.HandleFunc("/view", ViewPoll)
-	http.Handle("/", http.FileServer(http.Dir("public")))
-	http.ListenAndServe(":8080", nil)
+	mux := http.NewServeMux()
+
+	// serve static files from public folder
+	files := http.FileServer(http.Dir("public/"))
+	mux.Handle("/static/", http.StripPrefix("/static/", files))
+
+	mux.HandleFunc("/", index)
+	mux.HandleFunc("/save", SavePoll)
+	mux.HandleFunc("/view", ViewPoll)
+
+	// TODO: read address & port from config file
+	server := &http.Server{
+		Addr:    "127.0.0.1:7090", // ASCII "FZ"
+		Handler: mux,
+	}
+	// go
+	server.ListenAndServe()
+}
+
+func index(w http.ResponseWriter, r *http.Request) {
+	file := "templates/index.html"
+	template, err := template.ParseFiles(file)
+
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	if err := template.Execute(w, nil); err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
+
 }
 
 func SavePoll(w http.ResponseWriter, r *http.Request) {
