@@ -42,9 +42,8 @@ func main() {
 	mux.HandleFunc("/save", SavePoll)
 	mux.HandleFunc("/view", ViewPoll)
 
-	// TODO: read address & port from config file
 	server := &http.Server{
-		Addr:    "127.0.0.1:7090", // ASCII "FZ"
+		Addr:    config.Address,
 		Handler: mux,
 	}
 	// go

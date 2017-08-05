@@ -25,3 +25,6 @@ _testmain.go
 
 # Exclude binary
 vote
+
+# Exclude configuration file
+config.json
