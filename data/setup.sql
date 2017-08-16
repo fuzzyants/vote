@@ -41,9 +41,9 @@ CREATE OR REPLACE TABLE Ballots_Options (
 	PRIMARY KEY (ballotId, optionId)
 );
 
-
 CREATE OR REPLACE TABLE Results (
 	id SERIAL PRIMARY KEY,
+	userId BIGINT UNSIGNED NOT NULL,
 	voteId BIGINT UNSIGNED NOT NULL,
 	createdAt DATE,
 	INDEX userId_ix (userId),
@@ -57,8 +57,6 @@ CREATE OR REPLACE TABLE Results_Options (
 	votes BIGINT UNSIGNED,
 	PRIMARY KEY (ballotId, optionId)
 );
-
-
 
 CREATE OR REPLACE TABLE Users (
 	id SERIAL PRIMARY KEY,
