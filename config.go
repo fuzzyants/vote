@@ -7,12 +7,10 @@ import (
 )
 
 type Configuration struct {
-	Address    string `json:"address"`
-	Dbuser     string `json:"dbuser"`
-	Dbpassword string `json:"dbpassword"`
+	Address string `json:"address"`
 }
 
-var config Configuration
+var Config Configuration
 
 func init() {
 	parseConfig()
@@ -23,7 +21,7 @@ func parseConfig() {
 	if err != nil {
 		log.Fatalln("ERROR: Could not read config file.")
 	}
-	err = json.Unmarshal(file, &config)
+	err = json.Unmarshal(file, &Config)
 	if err != nil {
 		log.Println("ERROR:", err)
 		return
