@@ -17,7 +17,6 @@ type Vote struct {
 	CreatedAt time.Time
 }
 
-// SetName receives a pointer to Foo so it can modify it.
 func (vote *Vote) SetId(Id int64) {
 	vote.Id = Id
 }
