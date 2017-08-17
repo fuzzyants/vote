@@ -17,16 +17,13 @@ type Vote struct {
 	CreatedAt time.Time
 }
 
-func (vote *Vote) SetId(Id int64) {
-	vote.Id = Id
-}
-
 func (vote *Vote) Create() (err error) {
 
 	stmt, err := Db.Prepare("INSERT INTO Votes(maxUsers, slug, expires, done, createdAt) VALUES(?, ?, ?, ?, ?)")
 	if err != nil {
 		log.Fatal(err)
 	}
+	defer stmt.Close()
 
 	res, err := stmt.Exec(vote.MaxUsers, vote.Slug, vote.Expires, vote.Done, vote.CreatedAt)
 	if err != nil {
@@ -34,14 +31,11 @@ func (vote *Vote) Create() (err error) {
 	}
 	fmt.Println(res)
 
-	// Not sure this is idiomatic.
-	if vote.Id == 0 {
-		lastId, err := res.LastInsertId()
-		if err != nil {
-			log.Fatal(err)
-		} else {
-			vote.SetId(lastId)
-		}
+	lastId, err := res.LastInsertId()
+	if err != nil {
+		log.Fatal(err)
+	} else {
+		vote.Id = lastId
 	}
 
 	return
