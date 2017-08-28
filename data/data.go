@@ -5,14 +5,15 @@ import (
 	"fmt"
 	_ "github.com/go-sql-driver/mysql"
 	"log"
-	"os"
 )
 
 var Db *sql.DB
 
-func init() {
+func InitDb(host string, port string, user string, pw string) {
 	var err error
-	dsn := fmt.Sprintf("%s:%s@tcp(localhost:3306)/vote", os.Getenv("VOTEUSER"), os.Getenv("VOTEPWD"))
+	dsn := fmt.Sprintf(
+		"%s:%s@tcp(%s:%s)/vote", user, pw, host, port)
+
 	Db, err = sql.Open("mysql", dsn)
 	if err != nil {
 		log.Fatal(err)
